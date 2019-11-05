@@ -9,6 +9,9 @@
 *.userosscache
 *.sln.docstates
 
+# NServiceBus
+.learningtransport
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
