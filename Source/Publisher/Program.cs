@@ -14,23 +14,10 @@ namespace Publisher
             endpointConfiguration.UseTransport<LearningTransport>();
 
             var messageConstructor = new MessageConstructor();
-
             var endpointInstance = await Endpoint.Start(endpointConfiguration).ConfigureAwait(false);
-            Console.WriteLine("Enter \"exit\" to exit...");
 
-            string input;
-            do
-            {
-                Console.WriteLine("Enter string to publish: ");
-                input = Console.ReadLine();
-
-                if (!string.IsNullOrWhiteSpace(input))
-                {
-                    var message = messageConstructor.Construct(input);
-                    await endpointInstance.Publish(message);
-                }
-            } while (input != "exit");
-
+            var boostrapper = new Bootstrapper(endpointInstance, messageConstructor);
+            await boostrapper.Start();
             await endpointInstance.Stop().ConfigureAwait(false);
         }
     }

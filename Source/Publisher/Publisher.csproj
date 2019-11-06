@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3BA9BE98-966E-4730-B319-97DB5781E79E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PublishSubscribeDemo</RootNamespace>
+    <RootNamespace>Publisher</RootNamespace>
     <AssemblyName>Publisher</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="MessageConstructor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

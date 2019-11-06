@@ -14,7 +14,7 @@ namespace Subscriber.Test
         [TestMethod]
         public async Task Handle_ValidMessageRecieved_PrintOutputAsJsonStringToConsole()
         {
-            using (StringWriter sw = new StringWriter())
+            using (var sw = new StringWriter())
             {
                 var message = new Message { Value = "in-coming message", SHA256 = "dummy sha" };
                 var expectedString = string.Format(
